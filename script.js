@@ -19,6 +19,7 @@ function loadImage(event) {
     image.src = URL.createObjectURL(event.target.files[0]);
     changeSize();
 }
+
 function createImage() {
     if (image != null) {
         simContainer.removeChild(image);
@@ -34,8 +35,8 @@ function createPosition() {
 }
 
 function createTrajectory() {
-    let a = Math.random();
-    let b = Math.random();
+    let a = Math.random() * (Math.round(Math.random()) ? 1 : -1);
+    let b = Math.random() * (Math.round(Math.random()) ? 1 : -1);
     let magnitude = Math.sqrt(a ** 2 + b ** 2);
 
     dx = a / magnitude;
@@ -54,14 +55,14 @@ function changeSize() {
 
 function checkBounds() {
     if (x >= simContainer.offsetWidth - image.width) {
-        dx = - Math.abs(dx);
+        dx = -Math.abs(dx);
         x = simContainer.offsetWidth - image.width;
     } else if (x < 0) {
         dx = Math.abs(dx);
         x = 0;
     }
     if (y >= simContainer.offsetHeight - image.height) {
-        dy = - Math.abs(dy);
+        dy = -Math.abs(dy);
         y = simContainer.offsetHeight - image.height
     } else if (y < 0) {
         dy = Math.abs(dy);
