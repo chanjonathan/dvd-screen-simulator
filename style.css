@@ -1,0 +1,13 @@
+#simulator-container {
+    width: 100%;
+    height: calc(100% - 50px);
+    background-size: 100%;
+}
+
+#image {
+    position: absolute;
+}
+
+input {
+    margin: 10px;
+}
